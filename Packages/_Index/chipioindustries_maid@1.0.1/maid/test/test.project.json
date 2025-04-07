@@ -1,0 +1,20 @@
+{
+	"name": "maid",
+	"tree": {
+		"$className": "DataModel",
+
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"DevPackages": {
+				"$path": "../DevPackages"
+			},
+			"Packages": {
+				"$className": "Folder",
+				"$path": "../Packages",
+				"Maid": {
+					"$path": "../default.project.json"
+				}
+			}
+		}
+	}
+}

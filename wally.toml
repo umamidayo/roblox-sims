@@ -1,0 +1,10 @@
+[package]
+name = "dayo/roblox-sims"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+Cryo = "morgann1/cryo@1.0.3"
+React = "jsdotlua/react@17.2.0"
+Maid = "chipioindustries/maid@1.0.1"

@@ -1,0 +1,13 @@
+[package]
+name = "chipioindustries/maid"
+description = "A maid with a camelCase API."
+version = "1.0.1"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+exclude = ["wally.exe"]
+
+[dependencies]
+t = "osyrisrblx/t@3.0.0"
+
+[dev-dependencies]
+TestEZ = "roblox/testez@0.4.1"
