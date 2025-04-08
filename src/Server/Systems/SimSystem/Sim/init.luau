@@ -169,9 +169,6 @@ function Sim:stand()
 	if humanoid.Sit then
 		humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
 	end
-	if self.currentAction then
-		self.model:MoveTo(self.currentAction.instancePosition)
-	end
 	task.wait(0.5)
 	self.state = "Standing"
 	self.subState = "Nothing"
@@ -181,12 +178,19 @@ function Sim:moveTo(position: Vector3)
 	self:stand()
 
 	self.path:Run(position)
+
 	self.path.Blocked:Connect(function()
 		print(`{self.name} is can't move to their destination because the path is blocked`)
+		self.model:MoveTo(self.startPosition)
+		self.processingAction = false
 	end)
+
 	self.path.Error:Connect(function()
 		print(`{self.name} is can't move to their destination because the path errored`)
+		self.model:MoveTo(self.startPosition)
+		self.processingAction = false
 	end)
+
 	return self.path.Reached
 end
 
